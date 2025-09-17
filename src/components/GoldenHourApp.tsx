@@ -19,11 +19,25 @@ interface SunTimes {
   sunset: Date;
 }
 
+const inspiringQuotes = [
+  "Light makes photography. Embrace it, and you will find magic in every moment.",
+  "The golden hour is nature's way of saying 'slow down and notice the beauty.'",
+  "Every sunset brings the promise of a new dawn. Keep capturing life's precious moments.",
+  "Perfect light is not just seen, it's felt. Trust your vision and create something beautiful.",
+  "The best camera is the one with you when the light is perfect.",
+  "Photography is about finding the extraordinary in the ordinary light.",
+  "Chase the light, not the likes. Your passion will always shine through.",
+  "Golden hour reminds us that timing is everything in both life and photography.",
+  "When the light is magical, even ordinary moments become extraordinary memories.",
+  "The sun paints the sky just for you. Be ready to capture its masterpiece."
+];
+
 const GoldenHourApp = () => {
   const [location, setLocation] = useState<Location | null>(null);
   const [sunTimes, setSunTimes] = useState<SunTimes | null>(null);
   const [currentTime, setCurrentTime] = useState(new Date());
   const [isLoadingLocation, setIsLoadingLocation] = useState(false);
+  const [currentQuote, setCurrentQuote] = useState("");
   const { toast } = useToast();
 
   // Update current time every second
@@ -60,6 +74,10 @@ const GoldenHourApp = () => {
         sunrise: times.sunrise,
         sunset: times.sunset,
       });
+
+      // Set a random inspirational quote when data loads
+      const randomQuote = inspiringQuotes[Math.floor(Math.random() * inspiringQuotes.length)];
+      setCurrentQuote(randomQuote);
     }
   }, [location]);
 
@@ -294,6 +312,17 @@ const GoldenHourApp = () => {
                         </div>
                       </div>
                     </div>
+                  </div>
+                </Card>
+              )}
+
+              {/* Inspirational Quote */}
+              {currentQuote && (
+                <Card className="bg-white/5 backdrop-blur-md border-white/10 p-6">
+                  <div className="text-white text-center">
+                    <p className="text-sm font-light italic leading-relaxed text-white/80">
+                      "{currentQuote}"
+                    </p>
                   </div>
                 </Card>
               )}
