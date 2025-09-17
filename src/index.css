@@ -2,41 +2,61 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* Golden Hour & Blue Hour Design System
+All colors MUST be HSL for proper gradient transitions.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Base colors for light conditions */
+    --background: 43 100% 98%;
+    --foreground: 25 40% 15%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Golden Hour palette */
+    --golden-light: 45 100% 85%;
+    --golden: 38 100% 70%;
+    --golden-deep: 28 95% 55%;
+    --golden-dark: 20 90% 35%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    /* Blue Hour palette */  
+    --blue-light: 220 60% 85%;
+    --blue: 230 80% 60%;
+    --blue-deep: 240 90% 40%;
+    --blue-dark: 250 95% 25%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Neutral tones */
+    --card: 40 50% 97%;
+    --card-foreground: 25 40% 15%;
+    
+    --primary: 38 100% 70%;
+    --primary-foreground: 0 0% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 220 60% 85%;
+    --secondary-foreground: 250 95% 25%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 40 30% 92%;
+    --muted-foreground: 25 20% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 230 80% 60%;
+    --accent-foreground: 0 0% 98%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --border: 40 40% 88%;
+    --input: 40 40% 90%;
+    --ring: 38 100% 70%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Beautiful gradients */
+    --gradient-golden: linear-gradient(135deg, hsl(var(--golden-light)), hsl(var(--golden)), hsl(var(--golden-deep)));
+    --gradient-blue: linear-gradient(135deg, hsl(var(--blue-light)), hsl(var(--blue)), hsl(var(--blue-deep)));
+    --gradient-sunset: linear-gradient(180deg, hsl(var(--golden-light)) 0%, hsl(var(--golden)) 40%, hsl(var(--blue)) 80%, hsl(var(--blue-dark)) 100%);
+    --gradient-dawn: linear-gradient(180deg, hsl(var(--blue-dark)) 0%, hsl(var(--blue)) 20%, hsl(var(--golden)) 60%, hsl(var(--golden-light)) 100%);
 
-    --radius: 0.5rem;
+    /* Shadows and effects */
+    --shadow-golden: 0 20px 60px -10px hsl(var(--golden) / 0.3);
+    --shadow-blue: 0 20px 60px -10px hsl(var(--blue) / 0.3);
+    --glow-golden: 0 0 50px hsl(var(--golden) / 0.4);
+    --glow-blue: 0 0 50px hsl(var(--blue) / 0.4);
+
+    --radius: 1rem;
 
     --sidebar-background: 0 0% 98%;
 

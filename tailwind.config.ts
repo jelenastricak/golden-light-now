@@ -19,6 +19,19 @@ export default {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        
+        // Golden Hour colors
+        "golden-light": "hsl(var(--golden-light))",
+        "golden": "hsl(var(--golden))",
+        "golden-deep": "hsl(var(--golden-deep))",
+        "golden-dark": "hsl(var(--golden-dark))",
+        
+        // Blue Hour colors
+        "blue-light": "hsl(var(--blue-light))",
+        "blue": "hsl(var(--blue))",
+        "blue-deep": "hsl(var(--blue-deep))",
+        "blue-dark": "hsl(var(--blue-dark))",
+        
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -57,6 +70,18 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+      },
+      backgroundImage: {
+        'gradient-golden': 'var(--gradient-golden)',
+        'gradient-blue': 'var(--gradient-blue)',
+        'gradient-sunset': 'var(--gradient-sunset)',
+        'gradient-dawn': 'var(--gradient-dawn)',
+      },
+      boxShadow: {
+        'golden': 'var(--shadow-golden)',
+        'blue': 'var(--shadow-blue)',
+        'glow-golden': 'var(--glow-golden)',
+        'glow-blue': 'var(--glow-blue)',
       },
       borderRadius: {
         lg: "var(--radius)",
